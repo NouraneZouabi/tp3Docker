@@ -22,5 +22,5 @@ services:
     ports:
       - "3306:3306"
     volumes:
-      - "api_etudiant:/chemin/dans/le/conteneur"
+      - "api_etudiant:"
 
