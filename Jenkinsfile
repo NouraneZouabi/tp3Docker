@@ -1,7 +1,7 @@
 pipeline {
   agent any 
   tools {
-    Maven 'Maven'
+    maven 'Maven'
   }
   stages {
     stage ("clean up"){
@@ -16,7 +16,7 @@ pipeline {
     }
     stage ("Generate backend image"){
       steps {
-        dir("backend") {
+        dir("tp3Docker") {
           sh "mvn clean install"
           sh "docker build -t backend ."
         }
@@ -24,7 +24,7 @@ pipeline {
     }
     stage ("Run docker compose"){
       steps {
-        dir ("backend"){
+        dir ("tp3Docker"){
           sh "docker compose up -d "
         }
       }
