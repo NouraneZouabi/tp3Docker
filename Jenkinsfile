@@ -18,7 +18,7 @@ pipeline {
       steps {
         dir("tp3Docker") {
           sh "mvn clean install"
-          sh "sudo docker build -t backend ."
+          sh "docker build -t backend ."
         }
     }
     }
